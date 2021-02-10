@@ -9,6 +9,7 @@ import com.blankj.utilcode.util.Utils
 import com.maple.baselib.app.config.Config
 import com.maple.baselib.app.manager.AppLifeCycleCallBack
 import com.maple.baselib.app.manager.ForebackLifeObserver
+import com.maple.baselib.utils.LogUtils
 
 abstract class BaseApp : Application(), ViewModelStoreOwner {
 
@@ -24,6 +25,7 @@ abstract class BaseApp : Application(), ViewModelStoreOwner {
 
     override fun onCreate() {
         super.onCreate()
+        LogUtils.logGGQ("application ->>创建。。。")
         instance = this
         initApp()
         Utils.init(this)
