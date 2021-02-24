@@ -76,4 +76,19 @@
         <item name="android:windowExitAnimation">@anim/anim_dialog_down</item>
     </style>
 
+    <style name="common_style_verify_text">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">41dp</item>
+        <item name="android:background">@color/common_trans</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/common_color_verify</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="common_style_verify_line">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">@color/common_color_verify</item>
+    </style>
 </resources>

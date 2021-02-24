@@ -9,6 +9,6 @@ class SplashActivity : BaseActivity() {
     override fun getLayoutId(): Int = R.layout.activity_splash
 
     override fun initData(savedInstanceState: Bundle?) {
-
+        onStartActivity(HomeActivity::class.java,isFinish = true)
     }
 }

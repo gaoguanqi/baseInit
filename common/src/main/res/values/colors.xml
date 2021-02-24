@@ -26,4 +26,6 @@
 
 
     <color name="common_color_badge">#FF5E51</color>
+
+    <color name="common_color_verify">#666666</color>
 </resources>
