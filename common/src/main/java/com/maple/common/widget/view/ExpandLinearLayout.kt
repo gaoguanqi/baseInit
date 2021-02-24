@@ -11,12 +11,13 @@ import android.view.animation.RotateAnimation
 import android.widget.LinearLayout
 import androidx.core.view.marginBottom
 import androidx.core.view.marginTop
-import com.maple.common.utils.AnimUtils
 
 /**
+ * 可折叠带动画的 LinearLayout (带 icon 旋转动画)
+ *
  * 如何使用?
  *
-    <com.yechaoa.customviews.expand.ExpandLinearLayout
+    <com.maple.common.widget.view.ExpandLinearLayout
         android:id="@+id/ell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +35,7 @@ import com.maple.common.utils.AnimUtils
 
         ...
 
-    </com.yechaoa.customviews.expand.ExpandLinearLayout>
+    </com.maple.common.widget.view.ExpandLinearLayout>
 
     ll_btn.setOnClickListener {
         val toggle = ell.toggle()
@@ -43,7 +44,7 @@ import com.maple.common.utils.AnimUtils
  *
  */
 
-class ExpandLinearLayout : LinearLayout {
+class ExpandLinearLayout: LinearLayout {
 
     //是否展开，默认展开
     private var isOpen = true
@@ -131,7 +132,6 @@ class ExpandLinearLayout : LinearLayout {
     fun toggle(duration:Long = 300L,icRotate:View? = null): Boolean {
         isOpen = !isOpen
         startAnim(isOpen,duration,icRotate)
-
         return isOpen
     }
 
@@ -145,13 +145,14 @@ class ExpandLinearLayout : LinearLayout {
         val animator = ObjectAnimator.ofFloat(this, "animPercent", 0f, 1f)
         animator.duration = if(isOpen) duration else duration/2
         if(icon != null){
-            val rotateAnima = RotateAnimation(if(isOpen) 180f else 0f, if(isOpen) 0f else 180f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            val rotateAnim = RotateAnimation(if(isOpen) 180f else 0f, if(isOpen) 0f else 180f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             // 设置保持动画最后的状态
-            rotateAnima.fillAfter = true
-            rotateAnima.duration = if(isOpen) duration else duration/2
-            rotateAnima.interpolator = AccelerateInterpolator()
-            icon.startAnimation(rotateAnima)
+            rotateAnim.fillAfter = true
+            rotateAnim.duration = if(isOpen) duration else duration/2
+            rotateAnim.interpolator = AccelerateInterpolator()
+            icon.startAnimation(rotateAnim)
         }
         animator.start()
     }
+
 }
