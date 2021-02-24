@@ -3,7 +3,7 @@ package com.maple.test.ui.activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import com.blankj.utilcode.util.KeyboardUtils
+import android.widget.TextView
 import com.maple.baselib.utils.LogUtils
 import com.maple.common.base.BaseActivity
 import com.maple.common.common.VerifyCodeHandler
@@ -13,8 +13,8 @@ import com.maple.test.R
 
 class HomeActivity:BaseActivity() {
     private lateinit var exll:ExpandLinearLayout
-    lateinit var btnTest:Button
     lateinit var ivIcon:ImageView
+    lateinit var tvExpand:TextView
     lateinit var verifyCodeView:VerifyCodeView
 
     override fun getLayoutId(): Int = R.layout.activity_home
@@ -24,10 +24,11 @@ class HomeActivity:BaseActivity() {
         exll = findViewById(R.id.exll)
         verifyCodeView = findViewById(R.id.verifyCodeView)
         ivIcon = findViewById(R.id.iv_icon)
-        btnTest = findViewById(R.id.btn_test)
-        btnTest.setOnClickListener {
+        tvExpand = findViewById(R.id.tv_expand)
+
+        tvExpand.setOnClickListener {
             val toggle = exll.toggle(icRotate = ivIcon)
-            btnTest.text = if (toggle) "收起" else "展开"
+            tvExpand.text = if (toggle) "点击收起" else "点击展开"
         }
 
         VerifyCodeHandler(this).setView(this,verifyCodeView)

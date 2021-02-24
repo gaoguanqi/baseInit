@@ -27,7 +27,17 @@
                 android:layout_weight="1"
                 android:layout_height="42dp"
                 android:gravity="center_vertical"
-                android:text="test" />
+                android:text="title" />
+
+
+            <TextView
+                android:id="@+id/tv_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="点击收起" />
 
             <ImageView
                 android:id="@+id/iv_icon"
@@ -51,11 +61,6 @@
 
     </com.maple.common.widget.view.ExpandLinearLayout>
 
-    <Button
-        android:id="@+id/btn_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="测试" />
 
     <com.maple.common.widget.view.VerifyCodeView
         android:id="@+id/verifyCodeView"
