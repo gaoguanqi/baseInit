@@ -20,4 +20,11 @@
         <attr name="src" format="reference"/>
         <attr name="iconShow" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="ScrollTextView" tools:ignore="ResourceName">
+        <!--默认颜色-->
+        <attr name="defaultColor" format="color" />
+        <!--改变颜色-->
+        <attr name="changeColor" format="color" />
+    </declare-styleable>
 </resources>
