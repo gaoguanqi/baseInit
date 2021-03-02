@@ -91,4 +91,13 @@
         <item name="android:layout_gravity">bottom</item>
         <item name="android:background">@color/common_color_verify</item>
     </style>
+
+    <style name="common_avloading">
+        <item name="minWidth">22dip</item>
+        <item name="maxWidth">22dip</item>
+        <item name="minHeight">22dip</item>
+        <item name="maxHeight">22dip</item>
+        <item name="indicatorName">BallPulseIndicator</item>
+    </style>
+
 </resources>
